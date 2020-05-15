@@ -39,11 +39,11 @@ class LinkedList:
 
         return False
 
-    # def reverse_list(self, node, prev):
-    #     if node.get_next() is not None:
+    def reverse_list(self, node, prev):
+        if node.get_next() is not None:
 
-    #         next_node_to_make_head = node.get_next()
-    #         self.reverse_list(next_node_to_make_head, None)
+            next_node_to_make_head = node.get_next()
+            self.reverse_list(next_node_to_make_head, None)
 
     # Tail recursion
     def reverseUtil(self, curr, prev):
@@ -69,23 +69,6 @@ class LinkedList:
         if self.head is None: 
             return 
         self.reverseUtil(self.head, None) 
-
-
-
-
-        # get_next_node = node.get_next()
-        # if get_next_node == None:
-        #     self.head = None
-        #     return
-        
-        # self.reverse_list(get_next_node, None)
-        # self.add_to_head(node.value)
-        # # temp = get_next_node
-        # # temp.set_next(node)
-        # # node.set_next(None)
-        
-
-            
 
 
 # sll = LinkedList()

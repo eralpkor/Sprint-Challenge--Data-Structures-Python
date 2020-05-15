@@ -27,14 +27,14 @@ duplicates = []  # Return the list of duplicates in this data structure
 # elements n, then O(m * n) becomes O(n^2), or quadratic time.
 
 
-BStree = BinarySearchTree('eralp')
+# BStree = BinarySearchTree('eralp')
 
-for name_1 in names_1:
-    BStree.insert(name_1)
+# for name_1 in names_1:
+#     BStree.insert(name_1)
 
-for name_2 in names_2:
-    if BStree.contains(name_2):
-        duplicates.append(name_2)
+# for name_2 in names_2:
+#     if BStree.contains(name_2):
+#         duplicates.append(name_2)
 
 # RUNTIME ANALYSIS:
 # The original code takes around 10 seconds to run on my computer. Code utilizing a
@@ -60,7 +60,7 @@ for name_2 in names_2:
 # the first list (names_1) and n is the number of elements in the second list (names_2).
 #  This would result in linear time complexity.
 
-# duplicates = list(set(names_1).intersection(names_2))
+duplicates = list(set(names_1).intersection(names_2))
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
