@@ -13,6 +13,7 @@ class RingBuffer:
             self.current = self.storage.head
         else:
             self.current.value = item
+            # self.current.next, if it evaluates to true, otherwise self.storage.head.
             self.current = self.current.next or self.storage.head
 
     def get(self):
@@ -49,19 +50,19 @@ class ArrayRingBuffer:
 
 
 
-# capacity = 5
-# buffer = RingBuffer(capacity)
+capacity = 5
+buffer = RingBuffer(capacity)
 
-# buffer.append('a')
-# buffer.append('b')
-# buffer.append('c')
-# buffer.append('d')
-# buffer.append('e')
-# buffer.append('f')
-# buffer.append('g')
-# buffer.append('h')
-# buffer.append('i')
+buffer.append('a')
+buffer.append('b')
+buffer.append('c')
+buffer.append('d')
+buffer.append('e')
+buffer.append('f')
+buffer.append('g')
+buffer.append('h')
+buffer.append('i')
 
-# printMe = buffer.get(), ['f', 'g', 'h', 'i', 'e']
+printMe = buffer.get(), ['f', 'g', 'h', 'i', 'e']
 
-# print(printMe)
+print(printMe)
