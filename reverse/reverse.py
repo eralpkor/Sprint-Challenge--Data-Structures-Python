@@ -12,6 +12,7 @@ class Node:
     def set_next(self, new_next):
         self.next_node = new_next
 
+
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -38,5 +39,62 @@ class LinkedList:
 
         return False
 
-    def reverse_list(self, node, prev):
-        pass
+    # def reverse_list(self, node, prev):
+    #     if node.get_next() is not None:
+
+    #         next_node_to_make_head = node.get_next()
+    #         self.reverse_list(next_node_to_make_head, None)
+
+    # Tail recursion
+    def reverseUtil(self, curr, prev):
+        # If last node mark it head
+        if curr.get_next() is None:
+            self.head = curr
+
+            # Update next to prev node
+            curr.set_next(prev)
+            return
+
+        # Save curr.next node for recursive call
+        next = curr.get_next()
+
+        # And update next
+        curr.set_next(prev)
+
+        self.reverseUtil(next, curr)
+
+    # This function mainly calls reverseUtil()
+    # with previous as None
+    def reverse_list(self, node, pre): 
+        if self.head is None: 
+            return 
+        self.reverseUtil(self.head, None) 
+
+
+# sll = LinkedList()
+
+# sll.add_to_head(1)
+# sll.add_to_head(2)
+# sll.add_to_head(3)
+# sll.add_to_head(4)
+# sll.add_to_head(5)
+
+# print('Before reverse')
+# print(sll.head.value)
+# print(sll.head.get_next().value)
+# print(sll.head.get_next().get_next().value)
+# print(sll.head.get_next().get_next().get_next().value)
+
+
+# # after reverse
+# sll.reverse(sll.head)
+# print('After reverse')
+# print(sll.head.value)
+# print(sll.head.get_next().value)
+# print(sll.head.get_next().get_next().value)
+# print(sll.head.get_next().get_next().get_next().value)
+
+
+# reverse.reverse_list()
+
+
